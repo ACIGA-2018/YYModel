@@ -909,8 +909,9 @@ static void ModelSetValueForProperty(__unsafe_unretained id model,
                                         if (!cls) cls = meta->_genericCls; // for xcode code coverage
                                     }
                                     NSObject *newOne = [cls new];
-                                    [newOne yy_modelSetWithDictionary:one];
-                                    if (newOne) [objectArr addObject:newOne];
+                                    // [newOne yy_modelSetWithDictionary:one];
+                                    // if (newOne) [objectArr addObject:newOne];
+                                    if ([newOne yy_modelSetWithDictionary:one]) [objectArr addObject:newOne];
                                 }
                             }
                             ((void (*)(id, SEL, id))(void *) objc_msgSend)((id)model, meta->_setter, objectArr);
@@ -984,8 +985,9 @@ static void ModelSetValueForProperty(__unsafe_unretained id model,
                                     if (!cls) cls = meta->_genericCls; // for xcode code coverage
                                 }
                                 NSObject *newOne = [cls new];
-                                [newOne yy_modelSetWithDictionary:one];
-                                if (newOne) [set addObject:newOne];
+                                // [newOne yy_modelSetWithDictionary:one];
+                                // if (newOne) [set addObject:newOne];
+                                if ([newOne yy_modelSetWithDictionary:one]) [set addObject:newOne];
                             }
                         }
                         ((void (*)(id, SEL, id))(void *) objc_msgSend)((id)model, meta->_setter, set);
